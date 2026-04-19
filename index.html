@@ -4,496 +4,681 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>花青果｜桑椹果粒＋濃縮原汁</title>
-    <meta
-      name="description"
-      content="花青果，以桑椹果粒與濃縮原汁收住果園成熟風味。從產地、原料、濃度到價格，清楚理解這一罐的內容。"
-    />
+    <meta name="description" content="花青果職人桑椹果粒原汁。嘉義義竹 15 年老欉鮮採，純冰晶糖慢熬，不加水，只是把最直接的一口留在你手裡。" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap");
     </style>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              ivory: "#fffdf8",
-              linen: "#f6efe5",
-              mulberry: "#5b1930",
-              plum: "#2f1c1f",
-              wine: "#7b2842",
-              leaf: "#2f7a44",
-              sage: "#dff0de",
-              lilac: "#ece5fb",
-              mist: "#f7f3ed",
-              sand: "#f3ecdf",
-              moss: "#6f8668",
+              cream:  "#FCF7F0",
+              sand:   "#F1E5D4",
+              linen:  "#FAF5EF",
+              sage:   "#DCE9DA",
+              pine:   "#314B38",
+              moss:   "#5F7A61",
+              berry:  "#6E3E57",
+              jam:    "#4A2338",
+              gold:   "#C58C52",
+              paper:  "#FFFDFC",
+              ink:    "#1A1F1B",
             },
             fontFamily: {
-              sans: ['"Noto Sans TC"', '"PingFang TC"', '"Microsoft JhengHei"', "sans-serif"],
+              sans:  ['"Noto Sans TC"', '"PingFang TC"', '"Microsoft JhengHei"', "sans-serif"],
               serif: ['"Noto Serif TC"', "serif"],
             },
             boxShadow: {
-              glow: "0 24px 80px rgba(91, 25, 48, 0.10)",
-              paper: "0 14px 40px rgba(47, 28, 31, 0.08)",
-              soft: "0 8px 24px rgba(47, 28, 31, 0.07)",
+              soft: "0 24px 70px rgba(74,35,56,0.10)",
+              card: "0 14px 34px rgba(49,75,56,0.08)",
+              lift: "0 40px 80px rgba(49,75,56,0.16)",
             },
           },
         },
       };
     </script>
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
+      /* ── Base ── */
+      html { scroll-behavior: smooth; }
+      body { background-color: #FAF5EF; color: #314B38; }
 
-      body {
-        margin: 0;
-        color: #2f1c1f;
-        background:
-          radial-gradient(circle at top left, rgba(123, 40, 66, 0.06), transparent 22%),
-          radial-gradient(circle at top right, rgba(47, 122, 68, 0.06), transparent 24%),
-          linear-gradient(180deg, #fffdf8 0%, #f7f1e8 44%, #ffffff 100%);
-      }
-
+      /* ── Scroll Reveal ── */
       .reveal {
         opacity: 0;
-        transform: translateY(34px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform: translateY(44px);
+        transition: opacity 0.95s cubic-bezier(0.22,1,0.36,1),
+                    transform 0.95s cubic-bezier(0.22,1,0.36,1);
       }
+      .reveal.is-visible { opacity: 1; transform: none; }
+      .reveal-d1 { transition-delay: 0.10s; }
+      .reveal-d2 { transition-delay: 0.22s; }
+      .reveal-d3 { transition-delay: 0.36s; }
+      .reveal-d4 { transition-delay: 0.50s; }
 
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .section-label {
-        letter-spacing: 0.38em;
-      }
-
-      .hero-title {
-        letter-spacing: 0.14em;
-        line-height: 0.98;
-      }
-
-      .floating-paper {
-        background: rgba(255, 253, 248, 0.9);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-      }
-
-      .hero-photo::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(180deg, rgba(32, 18, 16, 0.06), rgba(32, 18, 16, 0.22)),
-          radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.18), transparent 18%);
+      /* ── Decorative background numbers ── */
+      .deco-num {
+        font-family: 'Noto Serif TC', serif;
+        font-weight: 900;
+        font-size: clamp(8rem, 18vw, 16rem);
+        line-height: 0.85;
+        letter-spacing: -0.04em;
+        color: rgba(49,75,56,0.045);
         pointer-events: none;
-      }
-
-      .product-stage {
-        position: relative;
-        overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(255, 253, 248, 0.14), rgba(255, 253, 248, 0.24)),
-          url("image/experience-orchard-ai.png");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .product-stage::after {
-        content: "";
+        user-select: none;
         position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(180deg, rgba(33, 21, 20, 0.12), rgba(33, 21, 20, 0.18)),
-          radial-gradient(circle at 76% 22%, rgba(255, 255, 255, 0.18), transparent 18%);
-        pointer-events: none;
       }
 
-      .jar-frame {
-        position: relative;
-        background: rgba(255, 252, 246, 0.88);
-        border: 1px solid rgba(255, 255, 255, 0.72);
-        box-shadow: 0 24px 52px rgba(47, 28, 31, 0.12);
+      /* ── Float animation ── */
+      .float-card {
+        animation: floatCard 7s ease-in-out infinite;
+      }
+      @keyframes floatCard {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-12px); }
       }
 
-      .jar-frame::before,
-      .jar-frame::after {
-        content: "";
-        position: absolute;
-        top: 1rem;
-        width: 5.2rem;
-        height: 1.05rem;
-        border-radius: 9999px;
-        background: rgba(255, 248, 232, 0.78);
-        box-shadow: 0 4px 10px rgba(47, 28, 31, 0.06);
+      /* ── Header glass ── */
+      .header-glass {
+        background: rgba(250,245,239,0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(197,140,82,0.14);
       }
 
-      .jar-frame::before {
-        left: 1.2rem;
-        transform: rotate(-10deg);
+      /* ── Hero ── */
+      .hero-img {
+        filter: saturate(0.86) contrast(1.07) brightness(0.94);
       }
 
-      .jar-frame::after {
-        right: 1.2rem;
-        transform: rotate(11deg);
-      }
-
-      .jar-photo {
+      /* ── Product photo blend ── */
+      .product-blend {
+        mix-blend-mode: multiply;
+        filter: saturate(0.94) contrast(1.08) brightness(1.02);
         display: block;
-        width: 100%;
-        border-radius: 1.65rem;
-        filter: saturate(0.98) contrast(1.02) brightness(1.01);
       }
 
-      .usage-chip {
-        border: 1px solid rgba(91, 25, 48, 0.09);
-        background: rgba(255, 253, 248, 0.88);
+      /* ── Texture overlay ── */
+      .texture-layer {
+        opacity: 0.07;
+        mix-blend-mode: multiply;
       }
 
-      .facts-card {
-        border: 1px solid rgba(91, 25, 48, 0.07);
-        box-shadow: 0 16px 44px rgba(47, 28, 31, 0.06);
+      /* ── Magazine rule ── */
+      .mag-rule {
+        display: inline-block;
+        width: 2.8rem;
+        height: 2px;
+        background: linear-gradient(90deg, #C58C52, transparent);
+        flex-shrink: 0;
       }
 
-      .price-board {
-        border: 1px solid rgba(91, 25, 48, 0.08);
-        background: rgba(255, 253, 248, 0.94);
+      /* ── Quote mark ── */
+      .quote-opener::before {
+        content: "\201C";
+        font-family: 'Noto Serif TC', serif;
+        font-size: 5.5rem;
+        line-height: 0.55;
+        color: rgba(197,140,82,0.28);
+        display: block;
+        margin-bottom: -0.5rem;
       }
 
-      .price-row + .price-row {
-        border-top: 1px solid rgba(91, 25, 48, 0.08);
+      /* ── Featured price card ── */
+      .price-featured {
+        background: linear-gradient(145deg, #314B38 0%, #4A2338 100%);
       }
 
-      .story-rail {
-        scrollbar-width: none;
-      }
-
-      .story-rail::-webkit-scrollbar {
-        display: none;
-      }
-
-      @media (max-width: 1023px) {
-        .hero-title {
-          line-height: 1.04;
-          letter-spacing: 0.1em;
-        }
+      /* ── Subtle film grain ── */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        opacity: 0.022;
+        pointer-events: none;
+        z-index: 9999;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 140px;
       }
     </style>
   </head>
-  <body class="font-sans text-[16px] leading-[1.85] sm:text-[17px]">
-    <main class="mx-auto max-w-[1440px] px-5 pb-16 pt-6 sm:px-8 lg:px-12 lg:pb-24">
-      <header class="reveal grid grid-cols-12 items-start gap-y-8 lg:gap-x-8">
-        <div class="col-span-12 lg:col-span-7 lg:pt-10">
-          <p class="section-label text-[11px] font-semibold uppercase text-leaf">Mulberry Orchard Preserve</p>
-          <h1 class="hero-title mt-5 font-serif text-[3rem] font-black text-plum sm:text-[4.7rem] lg:text-[6.5rem]">
-            花青果
-          </h1>
-          <p class="mt-5 max-w-3xl font-serif text-xl font-bold leading-[1.8] tracking-[0.08em] text-wine sm:text-[1.9rem]">
-            桑椹果粒＋濃縮原汁，
-            <br />
-            入口有果粒，餘韻有果園的深色。
-          </p>
-          <p class="mt-8 max-w-xl text-base leading-[1.95] text-[#5e5550] sm:text-lg">
-            花青果做得不是花俏，而是把果實原本的狀態保留下來。它適合想喝到果感、又不想被過度加工味道蓋掉的人。
-          </p>
+
+  <body class="font-sans text-[16px] sm:text-[17px] leading-[1.9]">
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="sticky top-0 z-50 header-glass">
+      <div class="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between py-3.5 sm:py-4">
+          <div class="flex items-baseline gap-4">
+            <span class="font-serif text-xl sm:text-2xl font-black tracking-[0.26em] text-jam">花青果</span>
+            <span class="hidden text-[9px] font-semibold uppercase tracking-[0.46em] text-moss sm:inline">Mulberry Preserve</span>
+          </div>
+          <a href="#pricing"
+             class="inline-flex items-center gap-2 rounded-full bg-pine px-5 py-2.5 text-sm font-semibold text-white shadow-card transition hover:bg-jam active:scale-[0.97]">
+            <span>了解售價</span>
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="relative overflow-hidden">
+
+      <!-- Full-bleed hero image -->
+      <div class="relative h-[82vh] min-h-[540px] max-h-[960px] overflow-hidden">
+        <img
+          src="image/hero-mulberry-ai.png"
+          alt="花青果桑椹果粒原汁"
+          class="hero-img h-full w-full object-cover object-center"
+        />
+        <!-- Gradient overlay — heavy at bottom so overlap block reads cleanly -->
+        <div class="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/22 to-ink/72 pointer-events-none"></div>
+
+        <!-- Corner labels -->
+        <div class="absolute left-6 top-6 sm:left-10 sm:top-10">
+          <p class="text-[9px] font-semibold uppercase tracking-[0.52em] text-white/50">Mulberry Orchard Preserve</p>
+        </div>
+        <div class="absolute right-6 top-6 sm:right-10 sm:top-10">
+          <p class="text-[9px] uppercase tracking-[0.42em] text-white/38">Seasonal Batch · 2025</p>
         </div>
 
-        <div class="col-span-12 lg:col-span-5">
-          <div class="hero-photo relative overflow-hidden rounded-[2.4rem] shadow-glow">
-            <img
-              id="heroImage"
-              src="image/hero-mulberry-ai.png"
-              alt="花青果品牌主視覺"
-              class="h-[23rem] w-full object-cover object-center sm:h-[35rem]"
-            />
+        <!-- Giant background character — pure decorative -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+          <span class="font-serif font-black text-white/[0.06]"
+                style="font-size: clamp(14rem,30vw,26rem); line-height:1; letter-spacing:-0.02em;">桑</span>
+        </div>
+      </div>
+
+      <!-- ── OVERLAPPING TITLE BLOCK ──
+           -mt-40 pulls this block up over the hero image,
+           creating the signature "magazine overlap" effect -->
+      <div class="relative z-10 -mt-36 sm:-mt-48 lg:-mt-56 px-4 sm:px-6 lg:px-10 pb-0">
+        <div class="mx-auto max-w-[1360px]">
+          <div class="grid grid-cols-12 items-end gap-3 sm:gap-4">
+
+            <!-- Main title card: 8 of 12 cols on desktop -->
+            <div class="col-span-12 lg:col-span-8
+                        bg-white/96 p-8 sm:p-12 shadow-lift"
+                 style="backdrop-filter:blur(3px);">
+              <div class="flex items-center gap-3 mb-5">
+                <span class="mag-rule"></span>
+                <p class="text-[9px] font-semibold uppercase tracking-[0.50em] text-moss">Chiayi Yizhu · 嘉義義竹</p>
+              </div>
+              <h1 class="font-serif font-black leading-[1.18] tracking-[0.10em] text-pine"
+                  style="font-size: clamp(2rem, 5.4vw, 4rem);">
+                抱歉，
+                <span class="block">除了品質，</span>
+                <span class="text-jam">我們沒有什麼好炫耀的。</span>
+              </h1>
+              <p class="mt-6 max-w-lg text-pine/62 text-base leading-[2.05] font-light">
+                花青果。桑椹果粒＋濃縮原汁。嘉義義竹 15 年老欉鮮採，純冰晶糖慢熬，不加水，不靠濃縮液，只是把最直接的一口，留在你手裡。
+              </p>
+            </div>
+
+            <!-- Floating product card: 4 of 12 cols — desktop only -->
+            <div class="hidden lg:block lg:col-span-4">
+              <div class="float-card bg-pine text-white p-8 shadow-lift ml-2">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.58em] text-white/38">Product</p>
+                <p class="mt-4 font-serif text-[2.6rem] font-black tracking-[0.10em] leading-none">花青果</p>
+                <p class="mt-2 text-sm text-white/52 tracking-[0.06em]">桑椹果粒＋濃縮原汁</p>
+                <div class="mt-7 pt-6 border-t border-white/14 space-y-4">
+                  <div>
+                    <p class="text-[8px] uppercase tracking-[0.44em] text-white/34">Origin</p>
+                    <p class="mt-1.5 font-serif text-lg font-bold tracking-[0.08em]">嘉義義竹鄉</p>
+                  </div>
+                  <div>
+                    <p class="text-[8px] uppercase tracking-[0.44em] text-white/34">Process</p>
+                    <p class="mt-1.5 font-serif text-lg font-bold tracking-[0.08em]">純冰晶糖慢熬</p>
+                  </div>
+                  <div>
+                    <p class="text-[8px] uppercase tracking-[0.44em] text-white/34">Density</p>
+                    <p class="mt-1.5 font-serif text-lg font-bold tracking-[0.08em]">每罐 1.5 斤鮮果</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <section class="reveal mt-12 grid grid-cols-12 gap-y-8 lg:mt-20 lg:items-center lg:gap-x-8">
-        <div class="col-span-12 lg:col-span-5">
-          <div class="floating-paper rounded-[2.2rem] p-7 shadow-paper sm:p-9">
-            <p class="section-label text-[11px] font-semibold uppercase text-leaf">Product</p>
-            <h2 class="mt-4 font-serif text-3xl font-black leading-[1.55] tracking-[0.1em] text-plum sm:text-[2.45rem]">
-              一罐裡，
-              <span class="block text-wine">保留桑椹該有的濃度與果粒。</span>
+
+    <!-- ═══════════════════════════════ PRODUCT STORY ═══════════════════════════════ -->
+    <section class="reveal relative py-24 sm:py-32 overflow-hidden bg-linen">
+
+      <!-- 桑葚近拍-1 as right-edge organic texture -->
+      <div class="absolute right-0 top-0 h-full w-[36%] pointer-events-none overflow-hidden">
+        <img src="image/桑葚近拍-1.jpg" alt="" aria-hidden="true"
+             class="texture-layer h-full w-full object-cover object-left" />
+      </div>
+      <!-- Decorative "01" -->
+      <div class="deco-num -left-3 top-6 select-none" aria-hidden="true">01</div>
+
+      <div class="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10 relative z-10">
+        <div class="grid grid-cols-12 gap-8 lg:gap-6 items-center">
+
+          <!-- Product photo: cols 1–5
+               Linen background + mix-blend-multiply dissolves the
+               product photo's white bg into the page, removing cut-out feel -->
+          <div class="col-span-12 lg:col-span-5 relative">
+            <div class="relative overflow-hidden bg-[#EFE5D9]" style="isolation:isolate; padding:2rem 1.5rem 1.2rem;">
+              <img
+                src="image/商品照.jpg"
+                alt="花青果桑椹果粒濃縮原汁商品照"
+                class="product-blend w-full object-contain"
+                style="max-height:580px; filter:drop-shadow(0 18px 36px rgba(74,35,56,0.18)) saturate(0.94) contrast(1.08);"
+              />
+            </div>
+            <!-- Badge overlapping bottom-right corner of product frame -->
+            <div class="absolute -bottom-4 -right-2 sm:-right-5 z-10 bg-gold text-white px-5 py-3.5 shadow-card">
+              <p class="text-[8px] uppercase tracking-[0.42em] text-white/68">Per Bottle</p>
+              <p class="mt-1 font-serif text-2xl font-black tracking-[0.06em]">1.5 斤</p>
+              <p class="text-xs text-white/70 mt-0.5">鮮採桑椹果</p>
+            </div>
+          </div>
+
+          <!-- Story text: cols 7–12 (intentional gap at col 6 = asymmetry) -->
+          <div class="col-span-12 lg:col-span-6 lg:col-start-7 mt-10 lg:mt-0">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="mag-rule"></span>
+              <p class="text-[9px] font-semibold uppercase tracking-[0.50em] text-moss">About the Product</p>
+            </div>
+            <h2 class="font-serif font-black leading-[1.25] tracking-[0.08em] text-pine"
+                style="font-size:clamp(1.9rem,4.2vw,3.1rem);">
+              不是神話式保養品，
+              <span class="block text-jam mt-1">而是很實在的果汁。</span>
             </h2>
-            <p class="mt-5 text-[#5e5550]">
-              沒有把內容說得太神，只把該喝到的東西做好。打開後能看見果粒，入口有厚度，調飲時也不容易被稀釋成只剩甜味。
+            <p class="mt-6 text-pine/65 text-base leading-[2.1] font-light max-w-lg">
+              花青果想說的很簡單。讓人知道原料從哪裡來、怎麼做、為什麼喝起來這麼厚。對食品來說，誠實往往比華麗更有說服力。
             </p>
-            <div class="mt-7 flex flex-wrap gap-3">
-              <span class="usage-chip rounded-full px-4 py-2 text-sm text-[#5e5550]">搭配氣泡水</span>
-              <span class="usage-chip rounded-full px-4 py-2 text-sm text-[#5e5550]">拌入優格</span>
-              <span class="usage-chip rounded-full px-4 py-2 text-sm text-[#5e5550]">加入牛奶</span>
+
+            <!-- Spec grid -->
+            <div class="mt-10 grid grid-cols-2 gap-x-8 gap-y-7">
+              <article class="reveal reveal-d1 border-l-2 border-gold pl-5">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.40em] text-moss">Origin</p>
+                <p class="mt-2 font-serif text-[1.3rem] font-bold tracking-[0.06em] text-pine">嘉義義竹鄉</p>
+                <p class="mt-1 text-sm text-pine/50">15 年老欉鮮採，來源有辨識度。</p>
+              </article>
+              <article class="reveal reveal-d2 border-l-2 border-gold pl-5">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.40em] text-moss">Method</p>
+                <p class="mt-2 font-serif text-[1.3rem] font-bold tracking-[0.06em] text-pine">純冰晶糖慢熬</p>
+                <p class="mt-1 text-sm text-pine/50">不加水，不拿香氣掩蓋果味。</p>
+              </article>
+              <article class="reveal reveal-d3 border-l-2 border-gold pl-5">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.40em] text-moss">Density</p>
+                <p class="mt-2 font-serif text-[1.3rem] font-bold tracking-[0.06em] text-pine">每罐 1.5 斤鮮果</p>
+                <p class="mt-1 text-sm text-pine/50">厚度不是調出來的，是堆出來的。</p>
+              </article>
+              <article class="reveal reveal-d4 border-l-2 border-gold pl-5">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.40em] text-moss">Storage</p>
+                <p class="mt-2 font-serif text-[1.3rem] font-bold tracking-[0.06em] text-pine">−18°C 急凍保鮮</p>
+                <p class="mt-1 text-sm text-pine/50">先留住鮮果狀態，再談後續品質。</p>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════ DAILY USE ═══════════════════════════════ -->
+    <section class="reveal relative overflow-hidden py-24 sm:py-32 bg-white">
+
+      <!-- 桑葚近拍-2 as bottom-left organic texture -->
+      <div class="absolute left-0 bottom-0 w-[30%] h-[65%] pointer-events-none overflow-hidden">
+        <img src="image/桑葚近拍-2.jpg" alt="" aria-hidden="true"
+             class="texture-layer h-full w-full object-cover object-right" />
+      </div>
+      <!-- Deco "02" -->
+      <div class="deco-num right-0 top-8 select-none" aria-hidden="true">02</div>
+
+      <div class="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10 relative z-10">
+        <div class="grid grid-cols-12 gap-8 lg:gap-10 items-start">
+
+          <!-- Left editorial: cols 1–6 -->
+          <div class="col-span-12 lg:col-span-6">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="mag-rule"></span>
+              <p class="text-[9px] font-semibold uppercase tracking-[0.50em] text-moss">Daily Scene</p>
+            </div>
+            <h2 class="font-serif font-black leading-[1.25] tracking-[0.08em] text-pine"
+                style="font-size:clamp(1.9rem,4.2vw,3.1rem);">
+              真正讓人想下單的，
+              <span class="block text-jam mt-1">是它進入日常的方式。</span>
+            </h2>
+            <p class="mt-6 text-pine/65 text-base leading-[2.1] font-light max-w-lg">
+              早上加水、下午配氣泡水、晚一點拌進優格。不是追求誇張的效果，而是讓你每天都願意喝，家人也願意接受。不用很複雜，才會真的持續。
+            </p>
+
+            <!-- Usage scenarios -->
+            <div class="mt-10 space-y-5">
+              <div class="reveal reveal-d1 flex items-start gap-4">
+                <div class="mt-1.5 flex-none w-7 h-7 rounded-full border border-gold/40
+                            flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-gold"></div>
+                </div>
+                <div>
+                  <p class="font-serif font-bold tracking-[0.06em] text-pine">加水稀釋 1:2</p>
+                  <p class="text-sm text-pine/50 mt-0.5">清爽日常飲用，最直接的方式。</p>
+                </div>
+              </div>
+              <div class="reveal reveal-d2 flex items-start gap-4">
+                <div class="mt-1.5 flex-none w-7 h-7 rounded-full border border-gold/40
+                            flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-gold"></div>
+                </div>
+                <div>
+                  <p class="font-serif font-bold tracking-[0.06em] text-pine">氣泡水混搭</p>
+                  <p class="text-sm text-pine/50 mt-0.5">下午的氣泡感，讓厚實的果味更活潑。</p>
+                </div>
+              </div>
+              <div class="reveal reveal-d3 flex items-start gap-4">
+                <div class="mt-1.5 flex-none w-7 h-7 rounded-full border border-gold/40
+                            flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-gold"></div>
+                </div>
+                <div>
+                  <p class="font-serif font-bold tracking-[0.06em] text-pine">優格拌入 2 湯匙</p>
+                  <p class="text-sm text-pine/50 mt-0.5">早餐時段，補充一天的第一口好味道。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right image + stats: cols 8–12 (1-col gap for asymmetry) -->
+          <div class="col-span-12 lg:col-span-5 lg:col-start-8">
+            <!-- Orchard image -->
+            <div class="relative overflow-hidden">
+              <img
+                src="image/experience-orchard-ai.png"
+                alt="桑椹園情境"
+                class="w-full object-cover"
+                style="height:480px; filter:saturate(0.84) contrast(1.07);"
+              />
+              <div class="absolute bottom-0 left-0 right-0 h-2/5
+                          bg-gradient-to-t from-pine/70 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-0 left-0 p-7 sm:p-8 text-white">
+                <p class="text-[8px] uppercase tracking-[0.50em] text-white/50">Daily Serving</p>
+                <p class="mt-2 font-serif text-2xl font-black tracking-[0.08em]">每日 2 湯匙</p>
+              </div>
+            </div>
+
+            <!-- Stats strip below image — slight overlap via -mt-0 border emphasis -->
+            <div class="grid grid-cols-2 border border-[#E4D9CC] bg-white">
+              <div class="px-6 py-5 border-r border-[#E4D9CC]">
+                <p class="text-[8px] uppercase tracking-[0.40em] text-moss">Serving Size</p>
+                <p class="mt-2 font-serif text-3xl font-black tracking-[0.06em] text-pine">2 湯匙</p>
+                <p class="mt-1 text-xs text-pine/44">每日建議量</p>
+              </div>
+              <div class="px-6 py-5">
+                <p class="text-[8px] uppercase tracking-[0.40em] text-moss">Stock</p>
+                <p id="stockStatus" class="mt-2 font-serif text-3xl font-black tracking-[0.06em] text-pine">少量供應</p>
+                <p class="mt-1 text-xs text-pine/44">目前庫存狀態</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════ TRUST / ENDORSEMENT ═══════════════════════════════ -->
+    <section class="reveal relative overflow-hidden bg-ink text-white py-24 sm:py-32">
+
+      <!-- 桑葚近拍 as dark section texture -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <img src="image/桑葚近拍-2.jpg" alt="" aria-hidden="true"
+             class="h-full w-full object-cover opacity-[0.055] mix-blend-luminosity" />
+      </div>
+
+      <div class="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10 relative z-10">
+        <div class="grid grid-cols-12 gap-8 lg:gap-10 items-start">
+
+          <!-- Photo: cols 1–5
+               Quote card overlaps the photo by -mt-20, creating
+               the "paper on photo" layering effect -->
+          <div class="col-span-12 lg:col-span-5 relative">
+            <div class="overflow-hidden">
+              <img
+                src="image/林志隆.jpg"
+                alt="中研新村社區發展協會 林志隆理事長"
+                class="w-full object-cover object-top"
+                style="height:520px; filter:grayscale(100%) contrast(1.12) brightness(0.92);"
+              />
+            </div>
+            <!-- Quote card overlapping bottom of photo (z-index layering) -->
+            <div class="relative z-10 -mt-20 ml-6 sm:ml-10 mr-0 bg-jam px-7 py-7 sm:px-8 sm:py-8 shadow-lift">
+              <div class="quote-opener"></div>
+              <blockquote class="font-serif text-lg sm:text-xl font-bold leading-[1.65] tracking-[0.06em] text-white">
+                有人願意把它帶進社區，這份信任才真正落地。
+              </blockquote>
+              <p class="mt-4 text-[9px] uppercase tracking-[0.42em] text-white/40">林志隆理事長</p>
+            </div>
+          </div>
+
+          <!-- Trust content: cols 7–12 -->
+          <div class="col-span-12 lg:col-span-6 lg:col-start-7 pt-0 lg:pt-8">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="mag-rule" style="background:linear-gradient(90deg,rgba(197,140,82,0.55),transparent);"></span>
+              <p class="text-[9px] font-semibold uppercase tracking-[0.50em] text-white/36">Trust &amp; Context</p>
+            </div>
+            <h2 class="font-serif font-black leading-[1.25] tracking-[0.08em]"
+                style="font-size:clamp(1.9rem,4.2vw,3.1rem);">
+              有些東西，
+              <span class="block text-gold mt-1">不需要被講得太神。</span>
+            </h2>
+            <div class="mt-8 space-y-5 text-white/58 text-base leading-[2.1] font-light max-w-lg">
+              <p>它不是藥品，也不該被包裝成奇蹟。</p>
+              <p>真正重要的是：來源清楚、做法簡單、入口厚實，而且你願意把它長期放進自己的生活裡。</p>
+              <p>這種說服比較安靜，但通常更穩。</p>
+            </div>
+
+            <!-- Person card -->
+            <div class="mt-10 p-6 border border-white/10 bg-white/[0.04]">
+              <p class="text-[8px] uppercase tracking-[0.46em] text-white/30">Endorsement</p>
+              <p class="mt-3 font-serif text-xl font-bold tracking-[0.08em]">林志隆理事長</p>
+              <p class="mt-1 text-sm text-white/44">中研新村社區發展協會</p>
+              <p class="mt-3 text-sm text-white/55 leading-[1.95]">
+                關心的不只是商品本身，而是如何把更自然的選擇帶進社區日常。
+              </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-8 pt-8 border-t border-white/10 grid grid-cols-3 gap-4">
+              <div class="reveal reveal-d1">
+                <p class="font-serif text-4xl font-black">15</p>
+                <p class="mt-2 text-[8px] uppercase tracking-[0.32em] text-white/32">Years Orchard</p>
+              </div>
+              <div class="reveal reveal-d2">
+                <p class="font-serif text-4xl font-black">1.5</p>
+                <p class="mt-2 text-[8px] uppercase tracking-[0.32em] text-white/32">Jin Per Bottle</p>
+              </div>
+              <div class="reveal reveal-d3">
+                <p class="font-serif text-4xl font-black">0</p>
+                <p class="mt-2 text-[8px] uppercase tracking-[0.32em] text-white/32">Added Water</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════ PRICING ═══════════════════════════════ -->
+    <section id="pricing" class="reveal relative py-24 sm:py-32 overflow-hidden bg-linen">
+
+      <!-- 桑葚近拍-1 left-edge texture -->
+      <div class="absolute left-0 top-0 w-[28%] h-full pointer-events-none overflow-hidden">
+        <img src="image/桑葚近拍-1.jpg" alt="" aria-hidden="true"
+             class="texture-layer h-full w-full object-cover object-right" />
+      </div>
+      <!-- Deco "03" -->
+      <div class="deco-num -right-4 bottom-0 select-none" aria-hidden="true">03</div>
+
+      <div class="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10 relative z-10">
+
+        <!-- Editorial header row -->
+        <div class="grid grid-cols-12 gap-6 mb-16">
+          <div class="col-span-12 lg:col-span-7">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="mag-rule"></span>
+              <p class="text-[9px] font-semibold uppercase tracking-[0.50em] text-moss">Pricing</p>
+            </div>
+            <h2 class="font-serif font-black leading-[1.2] tracking-[0.10em] text-pine"
+                style="font-size:clamp(2rem,5.2vw,3.6rem);">
+              價格看得懂，
+              <span class="text-jam">沒有暗藏玄機。</span>
+            </h2>
+            <p class="mt-5 text-pine/60 text-base font-light leading-[2.1] max-w-md">
+              把三種方案直接列清楚。選好數量，就知道這次要付多少。
+            </p>
+          </div>
+          <div class="col-span-12 lg:col-span-4 lg:col-start-9 flex items-end">
+            <div class="w-full border-t-2 border-gold/36 pt-5">
+              <p class="text-[8px] uppercase tracking-[0.44em] text-moss">Stock Status</p>
+              <p id="stockStatusPricing" class="mt-2 font-serif text-2xl font-black tracking-[0.06em] text-pine">少量供應</p>
             </div>
           </div>
         </div>
 
-        <div class="col-span-12 lg:col-span-7">
-          <div class="product-stage rounded-[2.5rem] px-6 py-10 shadow-glow sm:px-10 lg:px-14 lg:py-14">
-            <div class="relative z-10 grid grid-cols-12 gap-y-8 lg:items-end lg:gap-x-6">
-              <div class="col-span-12 lg:col-span-7 lg:order-2">
-                <div class="jar-frame mx-auto max-w-[26rem] rounded-[2rem] p-5 sm:p-6 lg:rotate-[1.4deg]">
-                  <img
-                    src="image/商品照.jpg"
-                    alt="花青果商品照"
-                    class="jar-photo"
-                  />
-                </div>
+        <!-- Three pricing cards — intentionally different heights via padding, asymmetric feel -->
+        <div class="grid grid-cols-12 gap-4 sm:gap-5 items-stretch">
+
+          <!-- 1 罐: cols 1–4 -->
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4 reveal reveal-d1">
+            <div class="border border-[#DDD0BF] bg-white h-full flex flex-col p-7 sm:p-9">
+              <div class="flex items-start justify-between">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.50em] text-moss">Single</p>
               </div>
-              <div class="col-span-12 lg:col-span-5 lg:order-1">
-                <div class="floating-paper max-w-md rounded-[1.8rem] p-6 shadow-paper sm:p-7 lg:-mr-10">
-                  <p class="section-label text-[11px] font-semibold uppercase text-leaf">Simple Reading</p>
-                  <p class="mt-4 font-serif text-2xl font-bold leading-[1.7] tracking-[0.08em] text-plum">
-                    看得見果粒，
-                    <br />
-                    才知道它沒有被做得太平。
-                  </p>
-                  <p class="mt-4 text-sm leading-[1.95] text-[#5e5550] sm:text-base">
-                    商品照不再硬切在背景上，而是以紙本編輯的方式放進果園畫面裡，讓這一罐看起來更像真實存在的產品，而不是被貼上去的素材。
-                  </p>
-                </div>
+              <p class="mt-2 text-[9px] uppercase tracking-[0.30em] text-pine/36">1 罐</p>
+              <p class="mt-5 font-serif font-black tracking-[0.04em] text-pine"
+                 style="font-size:clamp(2.8rem,6vw,4rem);">NT$650</p>
+              <p class="mt-1.5 text-sm text-pine/44">每罐 650 元</p>
+              <div class="mt-8 pt-6 border-t border-[#E8DDD0] space-y-2.5 text-sm text-pine/58 flex-1">
+                <p>· 嘉義義竹老欉鮮採</p>
+                <p>· 純冰晶糖慢熬</p>
+                <p>· 每罐 1.5 斤鮮果</p>
+                <p>· −18°C 急凍保鮮</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="reveal mt-12 lg:mt-20">
-        <div class="grid grid-cols-12 gap-5">
+          <!-- 2 罐以上: cols 5–8 -->
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4 reveal reveal-d2">
+            <div class="border border-[#DDD0BF] bg-white h-full flex flex-col p-7 sm:p-9">
+              <div class="flex items-start justify-between">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.50em] text-moss">Multi</p>
+              </div>
+              <p class="mt-2 text-[9px] uppercase tracking-[0.30em] text-pine/36">2 罐以上</p>
+              <p class="mt-5 font-serif font-black tracking-[0.04em] text-pine"
+                 style="font-size:clamp(2.8rem,6vw,4rem);">NT$600</p>
+              <p class="mt-1.5 text-sm text-pine/44">每罐 600 元</p>
+              <div class="mt-8 pt-6 border-t border-[#E8DDD0] space-y-2.5 text-sm text-pine/58 flex-1">
+                <p>· 2 罐起享階梯優惠</p>
+                <p>· 每罐比單購省 50 元</p>
+                <p>· 與家人共享更划算</p>
+                <p>· 同上所有品質規格</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 罐特惠: cols 9–12 — featured dark card -->
+          <div class="col-span-12 sm:col-span-12 lg:col-span-4 reveal reveal-d3">
+            <div class="price-featured text-white h-full flex flex-col p-7 sm:p-9 relative overflow-hidden">
+              <!-- Decorative circles -->
+              <div class="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-white/[0.04] pointer-events-none"></div>
+              <div class="absolute -right-4 bottom-16 w-28 h-28 rounded-full bg-white/[0.04] pointer-events-none"></div>
+
+              <div class="flex items-start justify-between relative z-10">
+                <p class="text-[8px] font-semibold uppercase tracking-[0.50em] text-white/42">Bundle</p>
+                <span class="bg-gold text-white text-[8px] font-bold uppercase tracking-[0.30em] px-2.5 py-1">
+                  最優惠
+                </span>
+              </div>
+              <p class="mt-2 text-[9px] uppercase tracking-[0.30em] text-white/32 relative z-10">4 罐特惠</p>
+              <p class="mt-5 font-serif font-black tracking-[0.04em] relative z-10"
+                 style="font-size:clamp(2.8rem,6vw,4rem);">NT$2,200</p>
+              <p class="mt-1.5 text-sm text-white/54 relative z-10">每罐 550 元 · 比單購省 NT$400</p>
+              <div class="mt-8 pt-6 border-t border-white/14 space-y-2.5 text-sm text-white/62 flex-1 relative z-10">
+                <p>· 4 罐合購最低單價</p>
+                <p>· 全年補充最佳方案</p>
+                <p>· 每罐省 100 元（比單購）</p>
+                <p>· 同上所有品質規格</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="mt-8 text-center text-xs text-pine/36 font-light tracking-[0.06em]">
+          如有疑問或大量採購需求，歡迎直接聯繫。
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer class="bg-ink text-white py-14 sm:py-16">
+      <div class="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-12 gap-8 items-start pb-10 border-b border-white/10">
           <div class="col-span-12 lg:col-span-5">
-            <article class="facts-card rounded-[2.3rem] bg-white p-8 sm:p-10">
-              <p class="section-label text-[11px] font-semibold uppercase text-leaf">Truthful Facts</p>
-              <h2 class="mt-5 font-serif text-[2.7rem] font-black leading-[1.2] tracking-[0.08em] text-plum sm:text-[4rem]">
-                我們不過度包裝，
-                <span class="block text-leaf">只把果汁做好</span>
-              </h2>
-              <p class="mt-7 max-w-3xl text-lg leading-[1.9] text-[#334134] sm:text-[1.15rem]">
-                嘉義義竹鄉老欉鮮採，採後急速冷凍，盡量保留果實原本的狀態。每一罐使用足量 A 級鮮果與冰晶糖慢熬，不摻水、不走捷徑。
-              </p>
-            </article>
+            <p class="text-[8px] uppercase tracking-[0.52em] text-white/26">Mulberry Preserve</p>
+            <p class="mt-3 font-serif text-4xl sm:text-5xl font-black tracking-[0.20em]">花青果</p>
+            <p class="mt-2 text-sm text-white/36 tracking-[0.10em]">桑椹果粒＋濃縮原汁</p>
           </div>
-
-          <div class="col-span-12 lg:col-span-4">
-            <article class="facts-card rounded-[2.3rem] bg-white p-8 sm:p-9">
-              <p class="section-label text-[11px] font-semibold uppercase text-leaf">產地與原料</p>
-              <h3 class="mt-5 font-serif text-[2rem] font-black leading-[1.45] tracking-[0.06em] text-plum">
-                嘉義義竹鄉老欉鮮採
-              </h3>
-              <p class="mt-5 text-lg leading-[1.9] text-[#4f4742]">
-                原料從源頭就有辨識度，不拿次級果混充。
-              </p>
-            </article>
-            <article class="facts-card mt-5 rounded-[2.3rem] bg-lilac p-8 sm:p-9">
-              <p class="section-label text-[11px] font-semibold uppercase text-[#7c58d0]">高濃度關鍵</p>
-              <h3 class="mt-5 font-serif text-[2rem] font-black leading-[1.45] tracking-[0.06em] text-plum">
-                每罐 1.5 斤 A 級鮮果
-              </h3>
-              <p class="mt-5 text-lg leading-[1.9] text-[#4f4742]">
-                濃郁感不是調出來的，是果量堆出來的。
-              </p>
-            </article>
-          </div>
-
-          <div class="col-span-12 lg:col-span-3">
-            <article class="facts-card rounded-[2.3rem] bg-sage p-8 sm:p-9">
-              <p class="section-label text-[11px] font-semibold uppercase text-leaf">保鮮處理</p>
-              <h3 class="mt-5 font-serif text-[2rem] font-black leading-[1.45] tracking-[0.06em] text-plum">
-                -18°C 急速冷凍
-              </h3>
-              <p class="mt-5 text-lg leading-[1.9] text-[#334134]">
-                先把鮮果狀態保住，再談後續熬煮品質。
-              </p>
-            </article>
-            <article class="facts-card mt-5 rounded-[2.3rem] bg-white p-8 sm:p-9">
-              <p class="section-label text-[11px] font-semibold uppercase text-leaf">熬煮方式</p>
-              <h3 class="mt-5 font-serif text-[2rem] font-black leading-[1.45] tracking-[0.06em] text-plum">
-                純冰晶糖慢熬
-              </h3>
-              <p class="mt-5 text-lg leading-[1.9] text-[#4f4742]">
-                不靠香精與濃縮液，味道就回到果本身。
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="reveal mt-12 grid grid-cols-12 gap-y-8 lg:mt-20 lg:items-start lg:gap-x-8">
-        <div class="col-span-12 lg:col-span-4">
-          <div class="floating-paper rounded-[2.2rem] p-7 shadow-paper sm:p-9">
-            <p class="section-label text-[11px] font-semibold uppercase text-leaf">Price</p>
-            <h2 class="mt-4 font-serif text-3xl font-black leading-[1.55] tracking-[0.1em] text-plum sm:text-[2.3rem]">
-              價格很簡單，
-              <span class="block text-wine">照你需要的罐數選就好。</span>
-            </h2>
-            <p class="mt-5 text-[#5e5550]">
-              單罐、兩罐以上、四罐特惠，三種方案一眼看懂，不用來回比。
+          <div class="col-span-12 lg:col-span-6 lg:col-start-7">
+            <p class="text-sm text-white/40 leading-[2.1] font-light">
+              嘉義義竹鄉，15 年老欉桑椹。<br/>
+              純冰晶糖慢熬，每罐 1.5 斤鮮果。<br/>
+              不加水，不添加人工成分。<br/>
+              −18°C 急凍保鮮，直送到手。
             </p>
           </div>
         </div>
-
-        <div class="col-span-12 lg:col-span-8">
-          <div class="price-board overflow-hidden rounded-[2.4rem] shadow-glow">
-            <div class="price-row flex flex-col gap-4 px-6 py-6 sm:px-8 sm:py-7 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p class="section-label text-[10px] font-semibold uppercase text-moss">單罐</p>
-                <p class="mt-2 text-[#5e5550]">適合先喝喝看。</p>
-              </div>
-              <div class="text-left md:text-right">
-                <p id="priceSingle" class="font-serif text-4xl font-black tracking-[0.08em] text-plum">NT$650</p>
-                <p class="mt-1 text-sm text-[#5e5550]">1 罐</p>
-              </div>
-            </div>
-            <div class="price-row flex flex-col gap-4 bg-white/40 px-6 py-6 sm:px-8 sm:py-7 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p class="section-label text-[10px] font-semibold uppercase text-moss">兩罐以上</p>
-                <p class="mt-2 text-[#5e5550]">和家人分享，或直接補足庫存。</p>
-              </div>
-              <div class="text-left md:text-right">
-                <p id="priceTwoPlus" class="font-serif text-4xl font-black tracking-[0.08em] text-plum">每罐 NT$600</p>
-                <p class="mt-1 text-sm text-[#5e5550]">2 罐以上適用</p>
-              </div>
-            </div>
-            <div class="price-row flex flex-col gap-4 bg-mulberry px-6 py-6 text-white sm:px-8 sm:py-7 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p class="section-label text-[10px] font-semibold uppercase text-white/72">四罐特惠</p>
-                <p class="mt-2 text-white/80">最划算的整體方案。</p>
-              </div>
-              <div class="text-left md:text-right">
-                <p id="priceBundle" class="font-serif text-4xl font-black tracking-[0.08em]">NT$2,200</p>
-                <p class="mt-1 text-sm text-white/76">每罐 550 元</p>
-              </div>
-            </div>
-          </div>
+        <div class="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p class="text-[9px] uppercase tracking-[0.44em] text-white/20">花青果 · Huaqing Guo</p>
+          <p class="text-[9px] text-white/16 tracking-[0.04em]">桑椹 · 誠實 · 日常</p>
         </div>
-      </section>
+      </div>
+    </footer>
 
-      <section class="reveal mt-12 lg:mt-20">
-        <div class="mb-6 max-w-2xl">
-          <p class="section-label text-[11px] font-semibold uppercase text-leaf">Trust</p>
-          <h2 class="mt-4 font-serif text-3xl font-black leading-[1.55] tracking-[0.1em] text-plum sm:text-[2.4rem]">
-            有人願意把它帶進社區，
-            <span class="block text-wine">這份信任才真正落地。</span>
-          </h2>
-        </div>
 
-        <div class="story-rail flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 lg:grid lg:grid-cols-12 lg:overflow-visible">
-          <article class="min-w-[84%] snap-start rounded-[2.2rem] bg-white shadow-paper lg:col-span-3 lg:min-w-0">
-            <div
-              class="h-[19rem] rounded-[2.2rem] bg-cover bg-center"
-              style="background-image: linear-gradient(180deg, rgba(255,253,248,0.12), rgba(255,253,248,0.26)), url('image/桑葚近拍-2.jpg');"
-            ></div>
-          </article>
-
-          <article class="min-w-[84%] snap-start overflow-hidden rounded-[2.2rem] bg-white shadow-paper lg:col-span-4 lg:min-w-0">
-            <img
-              src="image/林志隆.jpg"
-              alt="中研新村社區發展協會林志隆理事長"
-              class="h-[19rem] w-full object-cover object-center"
-            />
-          </article>
-
-          <article class="min-w-[84%] snap-start rounded-[2.2rem] bg-white p-7 shadow-glow sm:p-8 lg:col-span-5 lg:min-w-0">
-            <p class="section-label text-[11px] font-semibold uppercase text-leaf">Community Story</p>
-            <p class="mt-5 font-serif text-[2rem] font-black leading-[1.6] tracking-[0.08em] text-plum">
-              林志隆理事長關心的，
-              <br />
-              不只是商品本身。
-            </p>
-            <p class="mt-5 text-[#5e5550]">
-              中研新村社區發展協會林志隆理事長關心的不只是商品本身，而是如何把更自然的選擇帶進社區日常。
-            </p>
-            <p class="mt-4 text-[#5e5550]">
-              這句話的重量，不在宣傳，而在有人願意真的把它帶進生活裡。
-            </p>
-            <div class="mt-7 border-t border-[#efe7dd] pt-5">
-              <p class="font-serif text-xl font-bold tracking-[0.08em] text-plum">林志隆 理事長</p>
-              <p class="mt-2 text-sm text-[#776f69]">中研新村社區發展協會</p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
+    <!-- ═══════════════════════════════ SCRIPT ═══════════════════════════════ -->
     <script>
       const APP = {
-        gasUrl: "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec",
         config: {
-          price1: 650,
-          price2Plus: 600,
-          bundle4: 2200,
-          heroImageUrl: "image/hero-mulberry-ai.png",
+          stockStatus: "少量供應",
+          price1:      650,
+          price2Plus:  600,
+          bundle4:     2200,
         },
       };
 
-      const dom = {
-        heroImage: document.getElementById("heroImage"),
-        priceSingle: document.getElementById("priceSingle"),
-        priceTwoPlus: document.getElementById("priceTwoPlus"),
-        priceBundle: document.getElementById("priceBundle"),
-      };
-
-      function currency(value) {
-        return `NT$${Number(value).toLocaleString("zh-TW")}`;
-      }
-
       function renderPricing(config) {
-        dom.priceSingle.textContent = currency(config.price1);
-        dom.priceTwoPlus.textContent = `每罐 ${currency(config.price2Plus)}`;
-        dom.priceBundle.textContent = currency(config.bundle4);
-
-        if (config.heroImageUrl) {
-          dom.heroImage.src = config.heroImageUrl;
-        }
-      }
-
-      async function fetchConfig() {
-        if (APP.gasUrl.includes("REPLACE_WITH_YOUR_DEPLOYMENT_ID")) {
-          renderPricing(APP.config);
-          return;
-        }
-
-        try {
-          const response = await fetch(`${APP.gasUrl}?action=config&t=${Date.now()}`);
-          const data = await response.json();
-          if (!data.success) throw new Error(data.message || "設定讀取失敗。");
-
-          APP.config = {
-            ...APP.config,
-            ...data.config,
-          };
-
-          renderPricing(APP.config);
-        } catch (error) {
-          console.error(error);
-          renderPricing(APP.config);
-        }
+        document.querySelectorAll("#stockStatus, #stockStatusPricing")
+          .forEach(el => { if (el) el.textContent = config.stockStatus; });
       }
 
       function initReveal() {
-        const elements = document.querySelectorAll(".reveal");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15 }
-        );
-
-        elements.forEach((element) => observer.observe(element));
+        const els = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add("is-visible");
+          });
+        }, { threshold: 0.11 });
+        els.forEach(el => io.observe(el));
       }
 
       renderPricing(APP.config);
-      fetchConfig();
       initReveal();
     </script>
   </body>
